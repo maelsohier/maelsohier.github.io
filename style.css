@@ -165,6 +165,7 @@ h2 {
 .section-header p {
     color: var(--muted-foreground);
     font-size: 18px;
+    text-align: center;
 }
 
 .skills-grid {
@@ -219,6 +220,7 @@ h2 {
     display: flex;
     align-items: flex-start;
     line-height: 1.4;
+    text-align: justify;
 }
 
 .skill-card li::before {
@@ -325,6 +327,7 @@ h2 {
     color: var(--foreground);
     font-size: 22px;
     margin-bottom: 5px;
+    text-align: justify;
 }
 
 .timeline-content h4 {
@@ -333,11 +336,13 @@ h2 {
     font-size: 16px;
     margin-bottom: 15px;
     font-style: italic;
+    text-align: justify;
 }
 
 .timeline-content p {
     color: var(--muted-foreground);
     line-height: 1.6;
+    text-align: justify;
 }
 
 @media (max-width: 1024px) {

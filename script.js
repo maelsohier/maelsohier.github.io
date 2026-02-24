@@ -34,4 +34,32 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+    // --- SYSTÈME DE FILTRAGE DES PROJETS ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 1. On enlève la classe "active" de tous les boutons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // 2. On l'ajoute au bouton cliqué
+            btn.classList.add('active');
+
+            // 3. On récupère le texte du bouton (en minuscules pour éviter les bugs)
+            const filterValue = btn.textContent.trim().toLowerCase();
+
+            // 4. On trie les cartes
+            projectCards.forEach(card => {
+                // On récupère le tag du projet
+                const tag = card.querySelector('.tag').textContent.trim().toLowerCase();
+                
+                // Si on clique sur "Tous" ou que le tag correspond au bouton
+                if (filterValue === 'tous' || tag === filterValue) {
+                    card.style.display = 'block'; // On affiche
+                } else {
+                    card.style.display = 'none'; // On cache
+                }
+            });
+        });
+    });
 });
